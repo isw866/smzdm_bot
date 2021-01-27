@@ -3,7 +3,7 @@ import config
 import requests
 
 
-def push_to_wechat(text,desp,secretKey):
+def push_to_wechat(msg,secretKey):
     """
     通过serverchan将消息推送到微信
     :param secretKey: severchan secretKey
@@ -11,13 +11,14 @@ def push_to_wechat(text,desp,secretKey):
     :param desp: 内容
     :return resp: json
     """
-    url = f'http://sc.ftqq.com/{secretKey}.send'
+    url = f'https://qmsg.zendee.cn/send/{secretKey}'
     session = requests.Session()
-    data = {'text':text,'desp':desp}
+#     data = {'msg':msg,'desp':desp}
+    data = {'msg':msg}
     resp = session.post(url,data = data)
     return resp.json()
 
 
 if __name__ == '__main__':
-    resp = push_to_wechat(text = 'test', desp='hi', secretKey= config.SERVERCHAN_SECRETKEY)
+    resp = push_to_wechat(msg = 'test', secretKey= config.SERVERCHAN_SECRETKEY)
     print(resp)
