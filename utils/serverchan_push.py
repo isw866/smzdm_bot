@@ -3,7 +3,7 @@ import config
 import requests
 
 
-def push_to_wechat(msg,secretKey):
+def push_to_wechat(msg):
     """
     通过serverchan将消息推送到微信
     :param secretKey: severchan secretKey
