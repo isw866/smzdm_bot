@@ -44,7 +44,7 @@ class SMZDM_Bot(object):
         url = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
 #         current = session.get(url='https://zhiyou.smzdm.com/user/info/jsonp_get_current').json()
         msg = self.session.get(url)
-        msg2 = self.session.get(url2)
+#         msg2 = self.session.get(url2)
         if self.__json_check(msg):
 #             return msg.json()
             return msg.get('checkin', {}).get('daily_checkin_num', '')
