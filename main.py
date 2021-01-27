@@ -46,8 +46,7 @@ class SMZDM_Bot(object):
         msg = self.session.get(url)
 #         msg2 = self.session.get(url2)
         if self.__json_check(msg):
-#             return msg.json()
-            return msg.json.get('current', {}).get('daily_checkin_num', '')
+            return msg.json()
         return msg.content
 
 
