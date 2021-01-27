@@ -11,7 +11,7 @@ def push_to_wechat(msg):
     :param desp: 内容
     :return resp: json
     """
-    url = f'https://qmsg.zendee.cn/send/{secretKey}'
+    url = f'https://qmsg.zendee.cn/send/{secretKey}?'
     session = requests.Session()
 #     data = {'msg':msg,'desp':desp}
     data = {'msg':msg}
