@@ -40,13 +40,13 @@ class SMZDM_Bot(object):
         """
         签到函数
         """
-#         url = 'https://zhiyou.smzdm.com/user/checkin/jsonp_checkin'
-        url = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
+        url = 'https://zhiyou.smzdm.com/user/checkin/jsonp_checkin'
+        url2 = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
 #         current = session.get(url='https://zhiyou.smzdm.com/user/info/jsonp_get_current').json()
         msg = self.session.get(url)
-#         msg2 = self.session.get(url2)
+        msg2 = self.session.get(url2)
         if self.__json_check(msg):
-            return msg.json().get('checkin', {}).get('daily_checkin_num', '')
+            return msg2.json().get('checkin', {}).get('daily_checkin_num', '')
         return msg.content
 
 
