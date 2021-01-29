@@ -36,6 +36,6 @@ jobs:
 
       - name: Working
         env:
-#           COOKIES: ${{ secrets.SMZDM_COOKIE }}
+          COOKIES: ${{ secrets.SMZDM_COOKIE }}
           SERVERCHAN_SECRETKEY: ${{ secrets.SERVERCHAN_SECRETKEY }}
         run: python main.py #>SMZDM_Bot.log
